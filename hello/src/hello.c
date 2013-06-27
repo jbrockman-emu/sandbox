@@ -12,6 +12,6 @@
 #include <stdlib.h>
 
 int main(void) {
-	printf("Hello from VirtualBox\n");
+	printf("Hello again from VirtualBox\n");
 	return EXIT_SUCCESS;
 }
