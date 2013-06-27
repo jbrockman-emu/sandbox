@@ -12,6 +12,6 @@
 #include <stdlib.h>
 
 int main(void) {
-	printf("Hello from VirtualBox\n");
+	printf("Hello from emu-blade1\n");
 	return EXIT_SUCCESS;
 }
