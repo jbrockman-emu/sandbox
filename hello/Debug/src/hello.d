@@ -1,1 +1,1 @@
-src/hello.d src/hello.o: ../src/hello.c
+src/hello.d: ../src/hello.c
