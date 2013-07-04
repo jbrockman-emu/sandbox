@@ -5,9 +5,9 @@ package com.emu.pluginguisandbox.views;
    import org.eclipse.swt.SWT;
    import org.eclipse.ui.part.ViewPart;
 
-   public class SampleView extends ViewPart {
+   public class WelcomeView extends ViewPart {
       Label label;
-      public SampleView() {
+      public WelcomeView() {
       }
       public void createPartControl(Composite parent) {
          label = new Label(parent, SWT.CENTER);
