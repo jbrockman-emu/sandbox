@@ -21,7 +21,7 @@ import org.eclipse.swt.graphics.*;
 import org.eclipse.swt.widgets.*;
 import org.eclipse.swt.events.*;
 
-public class Snippet245 {
+public class Snippet245PaintCircle {
 
 	public static void main(String [] args) {
 		final Display display = new Display();

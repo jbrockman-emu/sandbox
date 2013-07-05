@@ -24,7 +24,7 @@ import org.eclipse.swt.layout.*;
 import java.text.*;
 import java.util.*;
 
-public class Snippet2 {
+public class Snippet2TableSort {
 
 	public static void main (String [] args) {
 		Display display = new Display ();

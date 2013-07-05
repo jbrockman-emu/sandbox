@@ -11,48 +11,51 @@
 package org.eclipse.swt.snippets;
 
 /*
- * Button example snippet: set the default button
+ * GridLayout example snippet: insert widgets into a grid layout
  *
  * For a list of all SWT example snippets see
  * http://www.eclipse.org/swt/snippets/
+ * 
+ * @since 3.1
  */
 import org.eclipse.swt.*;
-import org.eclipse.swt.widgets.*;
-import org.eclipse.swt.events.*;
 import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
 
-public class Snippet108 {
+public class Snippet6GridLayout {
 
 	public static void main (String [] args) {
 		Display display = new Display ();
-		Shell shell = new Shell (display);
-		Label label = new Label (shell, SWT.NONE);
-		label.setText ("Enter your name:");
-		Text text = new Text (shell, SWT.BORDER);
-		text.setLayoutData (new RowData (100, SWT.DEFAULT));
-		Button ok = new Button (shell, SWT.PUSH);
-		RowLayout rowLayout = new RowLayout();
-		rowLayout.type = SWT.VERTICAL;
-		ok.setText ("OK");
-		ok.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				System.out.println("OK");
+		final Shell shell = new Shell (display);
+		shell.setLayout(new GridLayout());
+		final Composite c = new Composite(shell, SWT.NONE);
+		GridLayout layout = new GridLayout();
+		layout.numColumns = 3;
+		c.setLayout(layout);
+		for (int i = 0; i < 10; i++) {
+			Button b = new Button(c, SWT.PUSH);
+			b.setText("Button "+i);
+		}
+
+		Button b = new Button(shell, SWT.PUSH);
+		b.setText("add a new button at row 2 column 1");
+		final int[] index = new int[1];
+		b.addListener(SWT.Selection, new Listener() {
+			public void handleEvent(Event e) {
+				Button s = new Button(c, SWT.PUSH);
+				s.setText("Special "+index[0]);
+				index[0]++;
+				Control[] children = c.getChildren();
+				s.moveAbove(children[3]);
+				shell.layout(new Control[] {s});
 			}
 		});
-		Button cancel = new Button (shell, SWT.PUSH);
-		cancel.setText ("Cancel");
-		cancel.addSelectionListener(new SelectionAdapter() {
-			public void widgetSelected(SelectionEvent e) {
-				System.out.println("Cancel");
-			}
-		});
-		shell.setDefaultButton (cancel);
-		shell.setLayout (rowLayout);
-		shell.pack ();
+
 		shell.open ();
 		while (!shell.isDisposed ()) {
 			if (!display.readAndDispatch ()) display.sleep ();
 		}
 		display.dispose ();
 	}
+
 }

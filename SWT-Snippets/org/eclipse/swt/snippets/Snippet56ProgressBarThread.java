@@ -20,7 +20,7 @@ import org.eclipse.swt.*;
 import org.eclipse.swt.graphics.Rectangle;
 import org.eclipse.swt.widgets.*;
 
-public class Snippet56 {
+public class Snippet56ProgressBarThread {
 
 	public static void main(String[] args) {
 		final Display display = new Display();
