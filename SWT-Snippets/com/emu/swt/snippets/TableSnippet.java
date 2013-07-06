@@ -45,7 +45,7 @@ public class TableSnippet {
 			item.setText (2, "!");
 			item.setText (3, "Jay was here");
 			item.setText (4, "and there");
-			item.setText (5, "some.folder");
+			item.setText (5, "my folder");
 			item.setText (6, "line " + i + " in nowhere");
 		}
 		for (int i=0; i<titles.length; i++) {
