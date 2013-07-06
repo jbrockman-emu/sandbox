@@ -1,4 +1,13 @@
-Display display = new Display ();
+package com.emu.swt.snippets;
+
+import org.eclipse.swt.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
+
+public class ProgressBarArray {
+	
+	public static void main (String [] args) {
+		Display display = new Display ();
 		final Shell shell = new Shell (display);
 		shell.setLayout(new FillLayout());
 		final Composite c = new Composite(shell, SWT.NONE);
@@ -21,3 +30,5 @@ Display display = new Display ();
 				display.sleep ();
 		}
 		display.dispose ();
+	}
+}
