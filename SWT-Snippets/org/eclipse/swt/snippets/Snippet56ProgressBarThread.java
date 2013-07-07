@@ -32,6 +32,8 @@ public class Snippet56ProgressBarThread {
 		final int maximum = bar.getMaximum();
 		new Thread() {
 			public void run() {
+				// i needs to be an array because it has to be final
+				// so that it can be used inside the run() method
 				for (final int[] i = new int[1]; i[0] <= maximum; i[0]++) {
 					try {Thread.sleep (100);} catch (Throwable th) {}
 					if (display.isDisposed()) return;
