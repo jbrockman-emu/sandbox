@@ -29,6 +29,16 @@ public class CircularBuffer implements Iterable<String> {
 		return result;
 	}
 	
+	public String previous() {
+		if (nextIndex == 0) {
+			nextIndex = list.size();
+		}
+		ListIterator<String> it = list.listIterator(nextIndex);
+		String result = it.previous();
+		nextIndex = it.nextIndex() % list.size();
+		return result;
+	}
+	
 	public void remove() {
 		ListIterator<String> it = list.listIterator(nextIndex);
 		it.next();

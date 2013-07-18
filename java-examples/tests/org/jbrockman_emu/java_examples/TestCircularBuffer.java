@@ -27,7 +27,7 @@ public class TestCircularBuffer {
 		System.out.println(b + " " + s);
 	}
 
-	@Test
+//	@Test
 	public void testNext() {
 		System.out.println("---- testNext ----");
 		setup();
@@ -44,8 +44,22 @@ public class TestCircularBuffer {
 			print("next tried on empty buffer");
 		}
 	}
-
+	
 	@Test
+	public void testPrevious() {
+		System.out.println("---- testPrevious ----");
+		setup();
+		for (int i = 0;  i < 8;  i++) {
+			System.out.println(b.previous());
+			print("previous");
+		}
+		for (int i = 0;  i < 8;  i++) {
+			System.out.println(b.next());
+			print("next");
+		}
+	}
+
+//	@Test
 	public void testRemove() {
 		System.out.println("---- testRemove ----");
 		setup();
@@ -64,7 +78,7 @@ public class TestCircularBuffer {
 		assertTrue(b.empty());
 	}
 	
-	@Test
+//	@Test
 	public void testRemoveSingleton() {
 		System.out.println("---- testRemoveSingleton ----");
 		b = new CircularBuffer();
@@ -76,7 +90,7 @@ public class TestCircularBuffer {
 		print("remove A");
 	}
 
-	@Test
+//	@Test
 	public void testIterator() {
 		System.out.println("---- testIterator ----");
 		setup();
@@ -86,7 +100,7 @@ public class TestCircularBuffer {
 		System.out.println();
 	}
 	
-	@Test
+//	@Test
 	public void testAdd() {
 		System.out.println("---- testAdd ----");
 		setup();
