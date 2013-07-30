@@ -24,13 +24,14 @@ public class TestScannerExamples {
 		uut.matchThreadletOp();
 	}
 	
-	@Test
+//	@Test
 	public void testScanTraceFile() {
-		try {
-			uut.scanTraceFile();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		uut.scanTraceFile();
+	}
+	
+	@Test
+	public void testScanStdin() {
+		uut.scanStdin();
 	}
 
 }

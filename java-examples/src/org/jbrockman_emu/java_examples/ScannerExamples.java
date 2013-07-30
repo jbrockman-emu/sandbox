@@ -38,7 +38,7 @@ public class ScannerExamples {
 		s.close(); 
 	}
 	
-	void scanTraceFile() throws IOException {
+	void scanTraceFile() {
 		BufferedReader inputStream = null;
 		String line = null;
 		Scanner s = null;
@@ -50,9 +50,20 @@ public class ScannerExamples {
 				MatchResult result = s.match();
 				System.out.println(result.group(1) + " " + result.group(2));
 			}
-		}
-		finally {
 			inputStream.close();
 		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	void scanStdin() {
+		Scanner stdin = new Scanner(System.in);
+		String input = stdin.nextLine();
+		String[] splitInput = input.split("-", -1);
+		for (String s : splitInput) {
+			System.out.println(s);
+		}
+		stdin.close();
 	}
 }
